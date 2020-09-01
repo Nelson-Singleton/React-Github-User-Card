@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios'
 import './App.css';
+import Card from './Card'
 
-function App() {
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      myCard: [],
+      followers: []
+    }
+  }
+
+componentDidMount(){
+  axios 
+    .get ('https://api.github.com/users/Nelson-Singleton')
+    .then (res => 
+      this.setState ({
+        myCard: res.data
+        
+      }))      
+    .catch (err => console.log("Error"))
+}
+
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Card mycard = {this.state.myCard} />
     </div>
   );
+}
 }
 
 export default App;
