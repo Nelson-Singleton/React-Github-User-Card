@@ -46,8 +46,12 @@
 
 .followerCard {
   width: 30%;
-  color: blue;
-  background-color: white;
-  border: 1px solid blue;
 
+  border: 1px solid white;
+
+}
+
+.dark-mode{
+  background-color: black;
+  color: lightgrey;
 }
