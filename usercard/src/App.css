@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.followerContainer {
+  display:flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.followerCard {
+  width: 30%;
+  color: blue;
+  background-color: white;
+  border: 1px solid blue;
+
+}
